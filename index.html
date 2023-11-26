@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Vina+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Only JS - Starwars</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="text-center "><button class="btn " id="show-btn">Listele</button></div>
+        <div class="row"> </div>
+    </div>
+    <div class="container mt-3 homeworld">
+        <form id="homeworldForm"></form>
+        <p class="selectedHomeworld">Seçili Homeworld: <span id="selectedHomeworld"></span></p>
+        <button class="btn" id="filter-btn">Filtrele</button>
+    </div>
+    <div class="container2">
+        <div class="tooltip">
+            Click the lightsaber
+        </div>
+            <div class="mask mask--on">
+            <div class="image" style="background-image: url('http://bookmrk.io/kyloren/kylo_mask.jpg');"></div>
+        </div>
+              <div class="lightsaber lightsaber--on">
+            <div class="lightsaber__light">
+                <div class="lightsaber__line"></div>
+                <div class="lightsaber__line"></div>
+                <div class="lightsaber__line"></div>
+            </div>
+            <div class="lightsaber__handle">
+                <svg id="handle-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 371.55">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #4e4f51;
+                            }
+
+                            .cls-2 {
+                                fill: #231f20;
+                            }
+
+                            .cls-3 {
+                                fill: #58595b;
+                            }
+
+                            .cls-4 {
+                                fill: #3b3a3c;
+                            }
+
+                            .cls-5 {
+                                fill: #323031;
+                            }
+
+                            .cls-6 {
+                                fill: #3a3825;
+                            }
+
+                            .cls-7 {
+                                fill: #454547;
+                            }
+
+                            .cls-8 {
+                                fill: #626366;
+                            }
+
+                            .cls-9 {
+                                fill: #217ca2;
+                            }
+
+                            .cls-10,
+                            .cls-13 {
+                                fill: #353435;
+                            }
+
+                            .cls-11 {
+                                fill: #3e3e3f;
+                            }
+
+                            .cls-12 {
+                                fill: #383738;
+                            }
+
+                            .cls-13 {
+                                stroke: #353435;
+                                stroke-linejoin: round;
+                                stroke-width: 2px;
+                            }
+
+                            .cls-14 {
+                                fill: #77787b;
+                            }
+
+                            .cls-15 {
+                                fill: none;
+                                stroke: #d0181f;
+                                stroke-miterlimit: 10;
+                                stroke-width: 6.01px;
+                            }
+
+                            .cls-16 {
+                                fill: #404041;
+                            }
+
+                            .cls-17 {
+                                fill: #0d0d0d;
+                            }
+                        </style>
+                    </defs>
+                    <title>kylo</title>
+                    <rect class="cls-1" x="813.22" y="12.41" width="43.06" height="91.44" />
+                    <rect class="cls-1" x="813.22" y="267.7" width="43.06" height="91.44" />
+                    <rect class="cls-2" x="537.69" y="127.08" width="25.48" height="118.15" />
+                    <path class="cls-2"
+                        d="M641.35,113.94s13.56,5.38,21.79,28.35,16.7,32.73,17.72,43.87,22,46.26,22,53.73,4.51,15.05,27,13.52,42.05-2.76,33.54-26.93,6.57-10.65,2-21.16-8.54-29.49-18.06-28.76-17.52-21.8-26.53-31.32-30.13-32.45-54.84-31.3H641.35Z"
+                        transform="translate(0 0)" />
+                    <polygon class="cls-3"
+                        points="703.26 165.02 691.44 165.02 680.45 138.86 692.27 138.86 703.26 165.02" />
+                    <rect class="cls-4" x="717.13" y="219.02" width="8.57" height="30.1" />
+                    <rect class="cls-4" x="666.09" y="203.29" width="102.07" height="7.77" />
+                    <polygon class="cls-4"
+                        points="691.85 165.02 680.04 165.02 669.05 138.86 680.86 138.86 691.85 165.02" />
+                    <rect class="cls-3" x="708.75" y="219.02" width="8.57" height="30.1" />
+                    <path class="cls-5"
+                        d="M762,222.33c4.51,21-7.76,18.27-33,21.53s-26.67-7.13-26.67-7.13v21.65h69.48l-3.59-35Z"
+                        transform="translate(0 0)" />
+                    <polygon class="cls-6" points="766.4 173.27 656.1 194.04 656.1 169.97 766.4 149.19 766.4 173.27" />
+                    <polygon class="cls-6"
+                        points="741.03 136.22 630.73 151.55 630.73 133.78 741.03 118.44 741.03 136.22" />
+                    <polygon class="cls-6"
+                        points="782.52 222.24 672.22 237.58 672.22 219.8 782.52 204.47 782.52 222.24" />
+                    <rect class="cls-3" x="666.09" y="165.02" width="81.38" height="7.77" />
+                    <rect class="cls-7" x="666.09" y="172.66" width="94.06" height="5.95" />
+                    <rect class="cls-7" x="646.4" y="129.47" width="94.06" height="5.88" />
+                    <rect class="cls-7" x="697.11" y="109.13" width="7.77" height="81.38"
+                        transform="translate(472.41 829.22) rotate(-83.47)" />
+                    <rect class="cls-7" x="666.09" y="210.94" width="102.07" height="5.95" />
+                    <rect class="cls-8" x="666.09" y="226.48" width="102.07" height="5.95" />
+                    <rect class="cls-3" x="649.34" y="123.07" width="59.41" height="2.14" />
+                    <rect class="cls-3" x="657.91" y="132.72" width="59.41" height="6.14" />
+                    <rect class="cls-8" x="695.37" y="118.02" width="2.14" height="72.52"
+                        transform="translate(463.94 828.66) rotate(-83.47)" />
+                    <rect class="cls-8" x="663.27" y="178.61" width="102.39" height="2.14" />
+                    <rect class="cls-9" x="666.94" y="224.9" width="102.39" height="4.14"
+                        transform="translate(-5.54 18.33) rotate(-1.46)" />
+                    <rect class="cls-8" x="663.27" y="187.96" width="102.39" height="2.14" />
+                    <rect class="cls-7" x="673.88" y="232.42" width="102.39" height="2.14" />
+                    <polygon class="cls-9"
+                        points="774.25 213.52 677.45 198.25 677.45 190.48 774.25 205.75 774.25 213.52" />
+                    <rect class="cls-7" x="663.27" y="192.23" width="102.39" height="2.14" />
+                    <path class="cls-4"
+                        d="M797,117.94H782.52V254.38H797a4,4,0,0,1-4,4H560.73a4,4,0,0,1-4-4V117.94a4,4,0,0,1,4-4h80.62s13.56,5.39,21.79,28.36,16.7,32.72,17.72,43.86,22,46.26,22,53.75,4.51,15,27,13.52,42.05-2.76,33.54-26.93,6.57-10.65,2-21.17-8.55-29.5-18.06-28.76-17.52-21.81-26.53-31.32c-8.61-9.07-28.28-30.42-51.55-31.3H793A4,4,0,0,1,797,117.94Z"
+                        transform="translate(0 0)" />
+                    <rect class="cls-4" x="663.27" y="190.09" width="102.39" height="2.14" />
+                    <rect class="cls-5" x="793.03" y="103.85" width="45.89" height="30.64" />
+                    <rect class="cls-10" x="246.83" y="123.07" width="294.87" height="126.17" />
+                    <rect class="cls-4" x="246.83" y="123.07" width="294.87" height="19.21" />
+                    <rect class="cls-4" x="246.83" y="149.81" width="294.87" height="19.21" />
+                    <rect class="cls-4" x="246.83" y="176.55" width="294.87" height="19.22" />
+                    <rect class="cls-4" x="246.83" y="203.29" width="294.87" height="19.21" />
+                    <rect class="cls-4" x="246.83" y="230.03" width="294.87" height="19.21" />
+                    <rect class="cls-2" x="452.19" y="165.02" width="4.11" height="15.54" />
+                    <rect class="cls-2" x="460.41" y="165.02" width="4.11" height="15.54" />
+                    <rect class="cls-2" x="468.63" y="165.02" width="4.11" height="15.54" />
+                    <rect class="cls-2" x="452.19" y="118.82" width="4.11" height="8.51" />
+                    <rect class="cls-2" x="460.41" y="118.82" width="4.11" height="8.51" />
+                    <rect class="cls-2" x="468.63" y="118.82" width="4.11" height="8.51" />
+                    <rect class="cls-2" x="452.19" y="244.99" width="4.11" height="8.51" />
+                    <rect class="cls-2" x="460.41" y="244.99" width="4.11" height="8.51" />
+                    <rect class="cls-2" x="468.63" y="244.99" width="4.11" height="8.51" />
+                    <rect class="cls-2" x="452.19" y="218.7" width="4.11" height="15.54" />
+                    <rect class="cls-2" x="460.41" y="218.7" width="4.11" height="15.54" />
+                    <rect class="cls-2" x="468.63" y="218.7" width="4.11" height="15.54" />
+                    <rect class="cls-1" x="448.08" y="165.02" width="4.11" height="15.54" />
+                    <rect class="cls-1" x="456.3" y="165.02" width="4.11" height="15.54" />
+                    <rect class="cls-1" x="464.52" y="165.02" width="4.11" height="15.54" />
+                    <rect class="cls-1" x="472.74" y="165.02" width="65.08" height="15.54" />
+                    <rect class="cls-1" x="448.08" y="118.82" width="4.11" height="8.51" />
+                    <rect class="cls-1" x="456.3" y="118.82" width="4.11" height="8.51" />
+                    <rect class="cls-1" x="464.52" y="118.82" width="4.11" height="8.51" />
+                    <rect class="cls-1" x="472.74" y="118.82" width="65.08" height="8.51" />
+                    <rect class="cls-1" x="448.08" y="244.99" width="4.11" height="8.51" />
+                    <rect class="cls-1" x="456.3" y="244.99" width="4.11" height="8.51" />
+                    <rect class="cls-1" x="464.52" y="244.99" width="4.11" height="8.51" />
+                    <rect class="cls-1" x="472.74" y="244.99" width="65.08" height="8.51" />
+                    <rect class="cls-1" x="448.08" y="218.7" width="4.11" height="15.54" />
+                    <rect class="cls-1" x="456.3" y="218.7" width="4.11" height="15.54" />
+                    <rect class="cls-1" x="464.52" y="218.7" width="4.11" height="15.54" />
+                    <rect class="cls-1" x="472.74" y="218.7" width="65.08" height="15.54" />
+                    <path class="cls-1"
+                        d="M691.47,246.65a9.91,9.91,0,0,1-9.91,9.91H573.39a9.91,9.91,0,0,1-9.91-9.91h0a9.91,9.91,0,0,1,9.91-9.91H681.56a9.91,9.91,0,0,1,9.91,9.91h0Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-10"
+                        d="M610.24,246.65a6.76,6.76,0,0,1-6.76,6.76H573.94a6.76,6.76,0,0,1-6.76-6.76h0a6.76,6.76,0,0,1,6.76-6.76h29.54a6.76,6.76,0,0,1,6.76,6.76h0Z"
+                        transform="translate(0 0)" />
+                    <rect class="cls-4" x="573.94" y="239.89" width="5.91" height="13.52" />
+                    <rect class="cls-4" x="585.76" y="239.89" width="5.91" height="13.52" />
+                    <rect class="cls-4" x="597.57" y="239.89" width="5.91" height="13.52" />
+                    <path class="cls-10"
+                        d="M687.62,246.65a6.76,6.76,0,0,1-6.76,6.76H651.32a6.76,6.76,0,0,1-6.76-6.76h0a6.76,6.76,0,0,1,6.76-6.76h29.54a6.76,6.76,0,0,1,6.76,6.76h0Z"
+                        transform="translate(0 0)" />
+                    <rect class="cls-4" x="651.32" y="239.89" width="5.91" height="13.52" />
+                    <rect class="cls-4" x="663.14" y="239.89" width="5.91" height="13.52" />
+                    <rect class="cls-4" x="674.95" y="239.89" width="5.91" height="13.52" />
+                    <rect class="cls-2" x="803.54" y="143.54" width="63.08" height="84.47" />
+                    <rect class="cls-4" x="866.63" y="137.48" width="33.38" height="96.59" />
+                    <polygon class="cls-4"
+                        points="856.28 143.54 856.28 125.21 836.92 125.21 836.92 134.49 822.23 134.49 822.23 124.14 827.57 124.14 827.57 111.66 803.54 111.66 803.54 143.54 856.28 143.54" />
+                    <path class="cls-4"
+                        d="M856.28,143.23c0,7-11.8,12.6-26.37,12.6s-26.37-5.64-26.37-12.6S856.28,136.27,856.28,143.23Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-4"
+                        d="M788.19,105.85V3.74s1.84-8.94,17.36.82c18.86,11.86,37,28.21,37,28.21v73.09H788.19Z"
+                        transform="translate(0 0)" />
+                    <rect class="cls-7" x="831.33" y="98.92" width="30.04" height="28.68" rx="2" ry="2" />
+                    <rect class="cls-5" x="793.03" y="235.06" width="45.89" height="32.64" />
+                    <polygon class="cls-4"
+                        points="856.28 228.01 856.28 246.34 836.92 246.34 836.92 237.06 822.23 237.06 822.23 247.41 827.57 247.41 827.57 259.89 803.54 259.89 803.54 228.01 856.28 228.01" />
+                    <rect class="cls-2" x="782.52" y="117.94" width="21.02" height="136.44" />
+                    <path class="cls-4"
+                        d="M856.28,228.32c0-7-11.8-12.6-26.37-12.6s-26.37,5.64-26.37,12.6S856.28,235.28,856.28,228.32Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-4"
+                        d="M788.19,267.7V367.81s1.84,8.94,17.36-.82c18.86-11.85,37-28.21,37-28.21V267.7H788.19Z"
+                        transform="translate(0 0)" />
+                    <rect class="cls-7" x="831.33" y="243.95" width="30.04" height="28.68" rx="2" ry="2" />
+                    <rect class="cls-11" y="129.09" width="40.06" height="114.15" />
+                    <rect class="cls-2" x="40.06" y="129.09" width="206.78" height="114.14" />
+                    <path class="cls-12"
+                        d="M236.81,129.09c0-12.64-71.81-10.95-116.81-10.95s-67.5-12-75.64-11S29,129.09,29,129.09H236.81Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-4"
+                        d="M236.81,243.23c0,12.64-71.81,10.95-116.81,10.95s-67.5,12-75.64,11S29,243.23,29,243.23H236.81Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-4"
+                        d="M236.81,214.3c0,12.64-71.81,10.95-116.81,10.95s-67.5,12-75.64,11S29,214.3,29,214.3v11s7.18,20.9,15.32,21.9,30.64-11,75.64-11,116.81,1.69,116.81-10.95v-11Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-13"
+                        d="M29,214.3s7.18,20.9,15.32,21.9,30.64-11,75.64-11,116.81,1.69,116.81-10.95v-7.91H40.06v7.91H29Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-14"
+                        d="M258.46,177.77h8.77a4,4,0,0,1,4,4v8.77a4,4,0,0,1-4,4h-8.77a4,4,0,0,1-4-4v-8.77A4,4,0,0,1,258.46,177.77Z" />
+                    <path class="cls-14"
+                        d="M70.21,177.77H79a4,4,0,0,1,4,4v8.77a4,4,0,0,1-4,4H70.21a4,4,0,0,1-4-4v-8.77A4,4,0,0,1,70.21,177.77Z" />
+                    <rect class="cls-12" x="74.6" y="173.81" width="188.24" height="24.7" rx="4.01" ry="4.01" />
+                    <circle class="cls-14" cx="88.62" cy="186.16" r="8.39" />
+                    <path class="cls-2"
+                        d="M241.27,189.79H123.32c-2.67,0-6.32,2.16-8.15,4.83l-2.66,3.88H99.87c2.67,0,6.32-2.16,8.16-4.84l3.6-5.24c1.83-2.67,5.48-4.83,8.15-4.83H240.43Z"
+                        transform="translate(0 0)" />
+                    <rect class="cls-14" x="47.56" y="118.1" width="12.02" height="12.02" rx="2" ry="2" />
+                    <rect class="cls-14" x="47.56" y="242.45" width="12.02" height="12.02" rx="2" ry="2" />
+                    <path class="cls-15"
+                        d="M100,129.09s0.15-18.52,32.95-8.25,86.86,4.38,120.74,15.23,144.15,8.73,173.39,0,78.77,2.58,119.49-7,85.06-9.05,100.3-14.23c20.67-7,25.47,6.06,25.16,14.6"
+                        transform="translate(0 0)" />
+                    <path class="cls-8"
+                        d="M168.72,139.31a3.2,3.2,0,0,1-3.2,3.2h0a3.2,3.2,0,0,1-3.2-3.2V122.88a3.2,3.2,0,0,1,3.2-3.2h0a3.2,3.2,0,0,1,3.2,3.2v16.43Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-13"
+                        d="M236.81,158c0-12.64-71.81-10.95-116.81-10.95s-67.5-12-75.64-11S29,158,29,158V147s7.18-20.9,15.32-21.9,30.64,11,75.64,11S236.81,134.39,236.81,147v11Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-4"
+                        d="M29,158s7.18-20.9,15.32-21.9,30.64,11,75.64,11S236.81,145.38,236.81,158v7.91H40.06V158H29Z"
+                        transform="translate(0 0)" />
+                    <rect class="cls-14" x="47.56" y="158.02" width="12.02" height="56.28" rx="2" ry="2" />
+                    <circle class="cls-14" cx="248.82" cy="186.16" r="8.39" />
+                    <rect class="cls-5" x="243.98" y="184.19" width="9.68" height="3.93" />
+                    <rect class="cls-5" x="83.78" y="184.19" width="9.68" height="3.93" />
+                    <rect class="cls-5" x="86.65" y="181.32" width="3.93" height="9.68" />
+                    <rect class="cls-5" x="246.86" y="181.32" width="3.93" height="9.68" />
+                    <path class="cls-8"
+                        d="M305.42,151.64a3.2,3.2,0,0,1-3.2,3.2h0a3.2,3.2,0,0,1-3.2-3.2V135.21a3.2,3.2,0,0,1,3.2-3.2h0a3.2,3.2,0,0,1,3.2,3.2v16.43Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-8"
+                        d="M638.83,129.29a3.2,3.2,0,0,1-3.2,3.2h0a3.2,3.2,0,0,1-3.2-3.2V112.85a3.2,3.2,0,0,1,3.2-3.2h0a3.2,3.2,0,0,1,3.2,3.2v16.43Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-1" d="M803.54,149.24A12.51,12.51,0,1,1,791,136.72,12.52,12.52,0,0,1,803.54,149.24Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-2" d="M788,141.23v16h-6.61a12.5,12.5,0,0,1,0-16H788Z" transform="translate(0 0)" />
+                    <rect class="cls-4" x="788.02" y="143.23" width="8.18" height="12.02" />
+                    <path class="cls-16" d="M805.54,155.25c-3.17,5.92-9.34,2.84-9.34,2.84v-17.7s6.17-3.09,9.34,2.84v12Z"
+                        transform="translate(0 0)" />
+                    <path class="cls-17"
+                        d="M836.93,166.57H735.21c3.92,5.85,7.93,10.31,12.26,10,9.41-.74,13.44,17.84,17.92,28.42h71.53a4,4,0,0,0,4-4v-30.4A4,4,0,0,0,836.93,166.57Z"
+                        transform="translate(0 0)" />
+                    <rect class="cls-4" x="835.24" y="160.49" width="27.37" height="50.58" rx="4" ry="4" />
+                </svg>
+                <div class="lightsaber__light-left">
+                    <div class="lightsaber__spark up"></div>
+                    <div class="lightsaber__spark up"></div>
+                    <div class="lightsaber__spark up"></div>
+                    <div class="lightsaber__spark down"></div>
+                    <div class="lightsaber__spark down"></div>
+                    <div class="lightsaber__spark down"></div>
+                    <div class="lightsaber__ripple"></div>
+                    <div class="lightsaber__ripple"></div>
+                </div>
+                <div class="lightsaber__light-right">
+                    <div class="lightsaber__spark up"></div>
+                    <div class="lightsaber__spark up"></div>
+                    <div class="lightsaber__spark up"></div>
+                    <div class="lightsaber__spark down"></div>
+                    <div class="lightsaber__spark down"></div>
+                    <div class="lightsaber__spark down"></div>
+                    <div class="lightsaber__ripple"></div>
+                    <div class="lightsaber__ripple"></div>
+                </div>
+            </div>
+            <div class="sparks">
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark up"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+                <div class="lightsaber__spark down"></div>
+            </div>
+            <div class="ripples">
+                <div class="lightsaber__ripple"></div>
+                <div class="lightsaber__ripple"></div>
+                <div class="lightsaber__ripple"></div>
+                <div class="lightsaber__ripple"></div>
+                <div class="lightsaber__ripple"></div>
+                <div class="lightsaber__ripple"></div>
+                <div class="lightsaber__ripple"></div>
+                <div class="lightsaber__ripple"></div>
+            </div>
+        </div>
+    </div>
+    <a href="http://dcmjs.com/lightsabers/" target="_blank" class="artist"></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
